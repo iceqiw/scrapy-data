@@ -42,8 +42,7 @@ class StationSpider(scrapy.Spider):
         res = {}
         res['train'] = line[3]
         res['date'] = line[13]
-        res['start'] = line[6]  #起点
-        res['end'] = line[7]  #终点
+        res['key'] = line[6]+'_'+line[7] 
         res['soft_sleeper'] = line[23]  #软卧
         res['hard_sleeper'] = line[28]  #硬卧
         res['hard_seat'] = line[29]  #硬座

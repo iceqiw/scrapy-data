@@ -12,8 +12,8 @@ class TaoBaoSpider(scrapy.Spider):
     # https://s.taobao.com/search?q=addidas&imgfile=&js=1&stats_click=search_radio_all%3A1&initiative_id=staobaoz_20180320&ie=utf8
     def start_requests(self):
         print("start")
-        key = 'ad'
-        for i in range(1, 3):
+        key =self.key
+        for i in range(0, 3):
             url = 'https://s.taobao.com/api?m=customized&q=' + str(key) + '&s=' + str(44 * i)
             print(url)
             yield Request(url=url, callback=self.page)
@@ -30,4 +30,4 @@ class TaoBaoSpider(scrapy.Spider):
             item['price'] = i['view_price']
             item['picurl'] = "http:" + i['pic_url']
             yield item
-            pass
+            

@@ -12,7 +12,7 @@ class JdSpider(scrapy.Spider):
 
     def start_requests(self):
         print("start")
-        key = 'ad'
+        key =self.key
         for i in range(1, 2):
             page_num = str(2 * i - 1)
             urls = self.search_url.format(key=key, page=page_num)

@@ -7,7 +7,7 @@ from elasticsearch import Elasticsearch
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-class ShopPipeline(object):
+class JdPipeline(object):
     def __init__(self):
         self.es = Elasticsearch(['192.168.1.143'], port=9200)
 
@@ -21,9 +21,9 @@ class ShopPipeline(object):
             title = item['title']
             doc = {
                 'url': link,
-                'imgUrl':picurl,
+                'imgUrl': picurl,
                 'title': title,
-                'price':price,
+                'price': price,
             }
             self.es.index(index="item", doc_type='sd', id=id, body=doc)
             print('商品ID\t', id)

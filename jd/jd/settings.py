@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for shop project
+# Scrapy settings for jd project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -9,21 +9,21 @@
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'shop'
+BOT_NAME = 'jd'
 
-SPIDER_MODULES = ['shop.spiders']
-NEWSPIDER_MODULE = 'shop.spiders'
+SPIDER_MODULES = ['jd.spiders']
+NEWSPIDER_MODULE = 'jd.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'shop (+http://www.yourdomain.com)'
 USER_AGENT = 'Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36'
 # Obey robots.txt rules
-# 绕过天猫robots.txt  
 ROBOTSTXT_OBEY = False  
   
 # 禁止cookies,防止被ban  
 COOKIES_ENABLED = False  
+
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 
@@ -50,13 +50,13 @@ COOKIES_ENABLED = False
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'shop.middlewares.ShopSpiderMiddleware': 543,
+#    'jd.middlewares.JdSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'shop.middlewares.ShopDownloaderMiddleware': 543,
+#    'jd.middlewares.JdDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,12 +67,8 @@ COOKIES_ENABLED = False
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'shop.pipelines.ShopPipeline': 300,
-#}
-
 ITEM_PIPELINES = {
-   'shop.pipelines.ShopPipeline': 300,
+   'jd.pipelines.JdPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

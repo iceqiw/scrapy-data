@@ -7,6 +7,7 @@ from jd.items import JdItem
 class JdSpider(scrapy.Spider):
     name = "jd"
     allowed_domains = ["jd.com"]
+    key=""
 
     search_url = 'https://search.jd.com/Search?keyword={key}&enc=utf-8&page={page}'
 

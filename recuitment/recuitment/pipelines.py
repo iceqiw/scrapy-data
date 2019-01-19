@@ -10,7 +10,7 @@ import os
 
 class RecuitmentPipeline(object):
     def open_spider(self, spider):
-        file_name = time.strftime("%Y-%m-%d", time.localtime())
+        file_name = '/data/'+time.strftime("%Y-%m-%d", time.localtime())
         os.makedirs(file_name, exist_ok=True)
         self.file = open(file_name+'/zg.json', 'w')
 

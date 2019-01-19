@@ -18,7 +18,6 @@ class RecuitmentPipeline(object):
         self.file.close()
 
     def process_item(self, item, spider):
-        print(item['name'], item['date'])
         line = json.dumps(dict(item), ensure_ascii=False) + "\n"
         self.file.write(line)
         return item

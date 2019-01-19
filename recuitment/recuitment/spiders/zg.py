@@ -14,6 +14,7 @@ class ZgSpider(scrapy.Spider):
             yield scrapy.Request(url=url, callback=self.parse)
 
     def parse(self, respones):
+        print("start")
         infos = respones.css('#listul li')
         for info in infos:
             if '小学' in info.css('a::text').extract_first():

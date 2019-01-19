@@ -17,7 +17,7 @@ class ZgSpider(scrapy.Spider):
         print("start")
         infos = respones.css('#listul li')
         for info in infos:
-            if '小学' in info.css('a::text').extract_first():
+            if u'小学' in info.css('a::text').extract_first():
                 ri = RecuitmentItem()
                 ri['name'] = info.css('a::text').extract_first()
                 if info.xpath('span/text()').extract_first():
